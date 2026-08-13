@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <div id="app">
+             <div class="container">
+        <div class="header">
+            <h1>To Do List</h1>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="button-container">
+            <button id="new">Add List</button>
+            <button id="new-project">Add Project</button>
+            <button id="my-projects">My Projects</button>
+        </div>
+    </div>
+    </div>
+   
+
+     <dialog id="project-dialog">
+        <div class="project-content">
+            <div class="project-container">
+                <form id="project-form">
+                    <input type="text" id="project-title" placeholder="Title" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="list-dialog">
+        <div class="dialog-content">
+            <div class="todo-container">
+        <form id="todo-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <details>
+                <summary>Additional Information</summary>
+                <label for="list-info">Details</label>
+                <textarea id="list-info" name="list-info"></textarea>
+            </details>
+            <input type="date" name="dueDate" id="todo-due">
+            <select name="priority" id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </details>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+        </div>
+    </dialog>
+    
+    <div class="list-container">
+        <ul id="todo-list"></ul>
+        <ul id="completed-list"></ul>
+    </div>
+    
+</body>
+</html>

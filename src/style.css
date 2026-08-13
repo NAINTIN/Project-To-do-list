@@ -1,0 +1,111 @@
+html, body {
+    background-color:rgb(136, 198, 219);
+}
+
+.container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: rgb(0, 149, 255);
+    color:white;
+}
+
+.button-container {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap:100px;
+}
+
+button{
+    width:120px;
+    height:70px;
+    background-color:aqua;
+}
+
+.list-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+summary {
+    margin-top: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    padding:12px;
+    cursor: pointer;
+    user-select: none;
+    font-weight:bold;
+    background-color: aqua;
+    border:2px solid black;
+}
+
+summary::marker{
+    content: "";
+}
+
+details[open]{
+    background-color: white
+}
+
+.todo-body{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 10px;
+}
+
+.list-body{
+    display:flex;
+    width:500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:black;
+    padding:20px;
+}
+
+.list-title {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+li {
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+input[type="checkbox"]{
+    margin-top: 10px;
+}
+
+
+.project-lists {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.project-container > ul{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-page > h2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
