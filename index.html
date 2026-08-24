@@ -1,69 +1,68 @@
-<head><script defer src="main.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve '/home/deniel/Documents/Project To-Do List/src/templat  e.html' in '/home/deniel/Documents/Project To-Do List'
-  ModuleNotFoundError: Module not found: Error: Can't resolve '/home/deniel/Documents/Project T  o-Do List/src/template.html' in '/home/deniel/Documents/Project To-Do List'
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/Compilation.js:2252  :28
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:1126:13
-      at eval (eval at create (/home/deniel/Documents/Project To-Do List/node_modules/tapable/l  ib/HookCodeFactory.js:31:10), <anonymous>:10:1)
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:510:22
-      at eval (eval at create (/home/deniel/Documents/Project To-Do List/node_modules/tapable/l  ib/HookCodeFactory.js:31:10), <anonymous>:9:1)
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:692:22
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:227:10
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:967:25
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:1212:8
-      at /home/deniel/Documents/Project To-Do List/node_modules/webpack/lib/NormalModuleFactory  .js:1342:5
-  
-  - Compilation.js:2252 
-    [Project To-Do List]/[webpack]/lib/Compilation.js:2252:28
-  
-  - NormalModuleFactory.js:1126 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:1126:13
-  
-  
-  - NormalModuleFactory.js:510 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:510:22
-  
-  
-  - NormalModuleFactory.js:692 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:692:22
-  
-  - NormalModuleFactory.js:227 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:227:10
-  
-  - NormalModuleFactory.js:967 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:967:25
-  
-  - NormalModuleFactory.js:1212 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:1212:8
-  
-  - NormalModuleFactory.js:1342 
-    [Project To-Do List]/[webpack]/lib/NormalModuleFactory.js:1342:5
-  
-  - child-compiler.js:211 
-    [Project To-Do List]/[html-webpack-plugin]/lib/child-compiler.js:211:18
-  
-  - Compiler.js:702 finalCallback
-    [Project To-Do List]/[webpack]/lib/Compiler.js:702:5
-  
-  - Compiler.js:738 
-    [Project To-Do List]/[webpack]/lib/Compiler.js:738:11
-  
-  - Compiler.js:1450 
-    [Project To-Do List]/[webpack]/lib/Compiler.js:1450:17
-  
-  
-  - Hook.js:21 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [Project To-Do List]/[tapable]/lib/Hook.js:21:14
-  
-  - Compiler.js:1446 
-    [Project To-Do List]/[webpack]/lib/Compiler.js:1446:33
-  
-  - Compilation.js:3511 finalCallback
-    [Project To-Do List]/[webpack]/lib/Compilation.js:3511:11
-  
-  - Compilation.js:3857 
-    [Project To-Do List]/[webpack]/lib/Compilation.js:3857:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+<script defer src="main.js"></script></head>
+<body>
+
+    <div id="app">
+             <div class="container">
+        <div class="header">
+            <h1>To Do List</h1>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="button-container">
+            <button id="new">Add List</button>
+            <button id="new-project">Add Project</button>
+            <button id="my-projects">My Projects</button>
+        </div>
+    </div>
+    </div>
+   
+
+     <dialog id="project-dialog">
+        <div class="project-content">
+            <div class="project-container">
+                <form id="project-form">
+                    <input type="text" id="project-title" placeholder="Title" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="list-dialog">
+        <div class="dialog-content">
+            <div class="todo-container">
+        <form id="todo-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <details>
+                <summary>Additional Information</summary>
+                <label for="list-info"></label>
+                <textarea id="list-info" name="list-info" class="details-textarea"></textarea>
+            </details>
+            <input type="date" name="dueDate" id="todo-due">
+            <select name="priority" id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </details>
+            <button type="submit" id="form-submit">Submit</button>
+        </form>
+    </div>
+        </div>
+    </dialog>
+    
+    <div class="list-container">
+        <ul id="todo-list"></ul>
+        <ul id="completed-list"></ul>
+    </div>
+    
+</body>
+</html>
