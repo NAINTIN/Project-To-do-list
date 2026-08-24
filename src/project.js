@@ -19,7 +19,8 @@ function createProject(title){
 
     projects.push(project)
     saveProject();
-    openProjects(project.id)
+    openProjects(project.id)// after being created it opens up with the renderPage then it assigns the current
+    // project id that has been created so every time i open it up it selects the id that it's been created with.
 }
 
 function openProjects(projectId){

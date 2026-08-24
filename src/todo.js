@@ -64,7 +64,7 @@ function render(projectId = null){ // if there's no project id then it will show
     // which is every item that has a null projectId
     list.innerHTML = ""
 
-    //filters out only the todos where there is a projectId 
+    //filters out only the todos where there is a projectId
     const projectTodos = todos.filter(t => t.projectId === projectId)
 
     projectTodos.forEach(todo => {
@@ -86,7 +86,7 @@ function render(projectId = null){ // if there's no project id then it will show
         body.innerHTML = `
         <p>Due Date: ${todo.dueDate}</p>
         <p>Priority Level: ${todo.priority}</p>
-        <p>${todo.description}</p>
+        <p id="render-completed">${todo.description}</p>
         <button class="delete-btn" data-id="${todo.id}">Delete</button>`;
 
         
@@ -109,7 +109,8 @@ function render(projectId = null){ // if there's no project id then it will show
             const toggleId = e.target.dataset.id // gives back the target id of the object
             console.log('toggle', toggleId)
             toggleComplete(toggleId) // makes it complete
-            renderCompletedTodos(getCurrentProjectId());
+            renderCompletedTodos(getCurrentProjectId()); // completes the list with the current projectId opened
+            // if null it's listed on the default page, if not null then it will only show on the specific project Id page
         })
         label.appendChild(checkbox)
         label.appendChild(textNode)
@@ -153,7 +154,7 @@ function renderCompletedTodos(projectId){
         details.appendChild(summary)
         body.classList.add('todo-body')
         body.innerHTML = `
-        <p>${todo.description}</p>`
+        <p id="render-completed"> ${todo.description}</p>`
 
         details.appendChild(body)
         li.appendChild(liTitle)

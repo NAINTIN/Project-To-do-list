@@ -1,5 +1,5 @@
 import "./style.css"
-import { createToDoList, render, todos  } from "./todo.js";
+import { createToDoList, render, todos } from "./todo.js";
 import { createProject, getCurrentProjectId, projects, renderDefaultPage, renderMyProjects } from "./project.js";
 
 const todoForm = document.getElementById("todo-form")
@@ -49,6 +49,12 @@ function loadTodos(){
     if(saved){
         todos.length = 0;
         todos.push(...saved) // copies the saved array back to the todos array one by one
+    } else{ // do this if storage is empty
+        todos.push(
+            {id: crypto.randomUUID(), title: "Welcome to my To Do List", description: "Sample List", dueDate:"", priority: "Low", projectId: null, completed:false},
+            {id: crypto.randomUUID(), title: "Sample List Number 2", description: "Hello Welcome Hehe", dueDate:"", priority: "Low", projectId: null, completed:false}
+        )
+        localStorage.setItem("todos", JSON.stringify(todos))
     }
     renderDefaultPage(); // renders the todos array back again.
 }
@@ -59,8 +65,9 @@ function loadProjects(){
     if (saved){
         projects.length = 0;
         projects.push(...saved)
-    }
+    } 
 }
+
 
 loadTodos();
 
